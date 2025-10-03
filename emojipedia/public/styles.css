@@ -1,0 +1,196 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: clamp(3rem, 8vw, 6rem);
+  text-align: center;
+  margin: 2rem auto 4rem;
+  color: #fff;
+  line-height: 1.1;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+h1 span {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #2ec2b0 0%, #1abc9c 100%);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(46, 194, 176, 0.3);
+  display: inline-block;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+h1 span:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(46, 194, 176, 0.4);
+}
+
+.dictionary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 2rem 4rem;
+}
+
+.dictionary > .term {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.dictionary > .term::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #2ec2b0, #1abc9c, #16a085);
+}
+
+.dictionary > .term:hover {
+  transform: translateY(-8px);
+  cursor: pointer;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.dictionary > .term > dt {
+  margin-bottom: 1rem;
+}
+
+dt {
+  color: #2c3e50;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+dt span {
+  font-size: 200%;
+  font-weight: 700;
+  color: #2ec2b0;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.emoji {
+  margin: 0 auto 1.2rem;
+  display: block;
+  font-size: 3.5rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+}
+
+.dictionary > .term:hover .emoji {
+  transform: scale(1.1) rotate(5deg);
+}
+
+dd {
+  font-size: 1rem;
+  margin-left: 0;
+  line-height: 1.6;
+  text-align: left;
+  padding: 0 0.5rem;
+}
+
+dd dt {
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  font-size: inherit;
+}
+
+dd dl {
+  font-size: 90%;
+  margin: 1rem auto 0 auto;
+  letter-spacing: 0.33px;
+  max-width: 15rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dictionary {
+    grid-template-columns: 1fr;
+    padding: 0 1rem 4rem;
+    gap: 1.5rem;
+  }
+  
+  .dictionary > .term {
+    padding: 2rem 1.5rem;
+  }
+  
+  h1 {
+    margin: 1rem auto 3rem;
+  }
+  
+  h1 span {
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .emoji {
+    font-size: 3rem;
+  }
+  
+  dt span {
+    font-size: 180%;
+  }
+  
+  dd {
+    font-size: 0.9rem;
+  }
+}
+
+/* Loading animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.dictionary > .term {
+  animation: fadeIn 0.6s ease forwards;
+  transform: translateY(0);
+}
+
+.dictionary > .term:nth-child(1) { animation-delay: 0.1s; }
+.dictionary > .term:nth-child(2) { animation-delay: 0.2s; }
+.dictionary > .term:nth-child(3) { animation-delay: 0.3s; }
+.dictionary > .term:nth-child(4) { animation-delay: 0.4s; }
+.dictionary > .term:nth-child(5) { animation-delay: 0.5s; }
+.dictionary > .term:nth-child(6) { animation-delay: 0.6s; }
+.dictionary > .term:nth-child(7) { animation-delay: 0.7s; }
+.dictionary > .term:nth-child(8) { animation-delay: 0.8s; }
+.dictionary > .term:nth-child(9) { animation-delay: 0.9s; }
+.dictionary > .term:nth-child(10) { animation-delay: 0.10s; }
+.dictionary > .term:nth-child(11) { animation-delay: 0.11s; }
+.dictionary > .term:nth-child(12) { animation-delay: 0.12s; }
+.dictionary > .term:nth-child(13) { animation-delay: 0.13s; }
+.dictionary > .term:nth-child(14) { animation-delay: 0.14s; }
+.dictionary > .term:nth-child(15) { animation-delay: 0.15s; }

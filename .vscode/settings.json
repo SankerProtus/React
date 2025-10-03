@@ -1,0 +1,10 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "notebook.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.fontSize": 16,
+    "workbench.colorTheme": "Default High Contrast",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": false,
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    }
+}
