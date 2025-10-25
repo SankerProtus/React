@@ -1,30 +1,3 @@
-# Keeper App
-
-Simple notes and keeper application demonstrating local state and list management with React.
-
-## Summary
-
-This project is a small note-keeping UI that demonstrates managing lists, local state, and conditional rendering.
-
-## Technologies
-
-- React
-- Vite
-- CSS
-
-## Features
-
-- Create and remove notes/items
-- Responsive layout and simple animations
-
-## Run locally
-
-```bash
-npm install
-npm run dev
-```
-
-Notes: This project is ideal for learning state updates and component composition.
 # 📝 Keeper App
 
 A modern, elegant note-taking application built with React and Material-UI. Inspired by Google Keep, this app allows users to create, manage, and organize their notes with a clean and intuitive interface.
@@ -70,7 +43,7 @@ A modern, elegant note-taking application built with React and Material-UI. Insp
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/SankerProtus/Web-Projects.git
+   git clone https://github.com/SankerProtus/React
    cd keeper-app
    ```
 
