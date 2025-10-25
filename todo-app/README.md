@@ -1,10 +1,10 @@
-# Smart Grocery Expiry Tracker
+# Todo App
 
-An application that helps track grocery items and their expiry dates, visualized in a user-friendly UI.
+Classic todo application demonstrating adding, completing, and removing tasks in React.
 
 ## Summary
 
-This project demonstrates CRUD operations for grocery items, filtering/sorting by expiry date, and responsive card/table layouts.
+Small demo app for task management patterns and local persistence strategies.
 
 ## Technologies
 
@@ -14,9 +14,9 @@ This project demonstrates CRUD operations for grocery items, filtering/sorting b
 
 ## Features
 
-- Create, read, update, delete grocery items
-- Filter and sort by expiry date
-- Visual notifications for expiring items
+- Add, toggle complete, and remove tasks
+- Local state management and optional localStorage integration
+- Responsive layout
 
 ## Run locally
 
@@ -25,7 +25,7 @@ npm install
 npm run dev
 ```
 
-Notes: For persistence, integrate localStorage or a backend API.
+Notes: Enhance with filtering, categories, and due dates for production use.
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

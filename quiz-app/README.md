@@ -1,23 +1,22 @@
-# Personal Budget Tracker and Expense Visualizer
+# Quiz App
 
-Budget tracker and visualizer demonstrating state management and data visualization in React.
+Interactive quiz application demonstrating component state and conditional scoring.
 
 ## Summary
 
-This project implements a simple personal finance tracker with forms to add expenses and visual charts to understand spending trends.
+This demo implements quiz questions, scoring, and basic feedback, useful as a training exercise or learning component patterns.
 
 ## Technologies
 
 - React
 - Vite
-- Charting library (if present)
 - CSS
 
 ## Features
 
-- Add / remove expenses
-- Visual summaries and charts
-- Responsive layout and accessible forms
+- Multiple-choice quiz flow
+- Score calculation and feedback
+- Reusable question components
 
 ## Run locally
 
@@ -26,7 +25,7 @@ npm install
 npm run dev
 ```
 
-Notes: If the project uses a charting library (e.g., Chart.js), run `npm install` to install dependencies.
+Use this as a starter for building educational micro-apps or integrating into larger learning platforms.
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
