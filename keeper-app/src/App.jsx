@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, use } from "react";
 import Header from "./components/Header";
 import CreateNote from "./components/CreateNote";
 import Footer from "./components/Footer";
@@ -8,9 +8,25 @@ import "./App.css";
 
 function App() {
   const [currentNote, setCurrentNote] = useState({ title: "", content: "" });
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(() => {
+    try {
+      const savedNotes = JSON.parse(localStorage.getItem("notes"));
+      return savedNotes || [];
+    } catch (error) {
+      console.error("Error parsing notes from localStorage:", error);
+      return [];
+    }
+  });
   const [isExpanded, setIsExpanded] = useState(false);
   const timerRef = useRef(null);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("notes", JSON.stringify(notes));
+    } catch (error) {
+      console.error("Error saving notes to localStorage:", error);
+    }
+  }, [notes]);
 
   // Function to start/restart the 2-minute timer
   function startAutoCollapseTimer() {
