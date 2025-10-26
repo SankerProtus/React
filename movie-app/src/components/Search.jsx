@@ -7,8 +7,8 @@ export default function SearchBar({ searchValue, setSearchValue }) {
 
             <input
                 type="text"
-                name="search"
                 id="search"
+                name="search"
                 placeholder="Search for movies..."
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}

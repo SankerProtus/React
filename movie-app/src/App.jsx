@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useDebounce } from "use-debounce";
 import SearchBar from "./components/Search.jsx";
 import logo from "./assets/images/logo.jpg";
@@ -17,15 +17,17 @@ function App() {
   const API_BASE_URL = import.meta.env.VITE_TMDB_API_BASE_URL;
   const API_ACCESS_TOKEN = import.meta.env.VITE_TMDB_API_ACCESS_TOKEN;
   const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
-  const API_OPTIONS = {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${API_ACCESS_TOKEN}`,
-    },
-  };
 
-  const fetchMovies = async (query) => {
+  const fetchMovies = useCallback(async (query) => {
+
+    const API_OPTIONS = {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${API_ACCESS_TOKEN}`,
+        "Content-Type": "application/json;charset=utf-8",
+      },
+    };
+
     setLoading(true);
     setErrorMessage(null);
 
@@ -56,11 +58,11 @@ function App() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [API_BASE_URL, API_KEY, API_ACCESS_TOKEN]);
 
   useEffect(() => {
     fetchMovies(debouncedSearchValue);
-  }, [debouncedSearchValue]);
+  }, [debouncedSearchValue, fetchMovies]);
 
   if (movies.length === 0 && !loading && !errorMessage) {
     return (
