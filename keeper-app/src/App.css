@@ -133,7 +133,6 @@ form.create-note button {
   outline: none;
 }
 
-/* Submit and cancel adjustments for CreateNote */
 .submit-btn {
   position: absolute;
   right: 18px;
@@ -154,7 +153,7 @@ form.create-note button {
 
 .cancel-btn {
   position: absolute;
-  right: 68px; /* sits to the left of the submit button */
+  right: 68px; 
   bottom: -18px;
   background: rgba(0, 0, 0, 0.06);
   color: #444;
