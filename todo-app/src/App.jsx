@@ -14,7 +14,7 @@ function App() {
   }
 
   function addTask() {
-    setTask(prevTask => ([...prevTask, headingText]));
+    {headingText && headingText.length > 5 ? setTask(prevTask => ([...prevTask, headingText])) : alert("Field must not be empty and characters must be more than 5!")};
     
     setHeadingText("");
   }
