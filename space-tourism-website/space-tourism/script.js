@@ -12,7 +12,7 @@ app.use(cors());
 dotenv.config();
 
 // Validate required environment variables
-const requiredEnvVars = ['DB_USER', 'DB_HOST', 'DB_NAME', 'DB_PASSWORD', 'DB_PORT'];
+const requiredEnvVars = ['PG_USER', 'PG_HOST', 'PG_DATABASE', 'PG_PASSWORD', 'PG_PORT'];
 const missingEnvVars = requiredEnvVars.filter(envVar => !process.env[envVar]);
 
 if (missingEnvVars.length > 0) {
@@ -24,12 +24,13 @@ const PORT = process.env.PORT || 5000;
 
 const { Pool } = pg;
 const db = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
+  host: process.env.PG_HOST,
+  port: process.env.PG_PORT,
+  user: process.env.PG_USER,
+  password: process.env.PG_PASSWORD,
+  database: process.env.PG_DATABASE
 });
+
 
 db.query("SELECT NOW()", (err, result) => {
   if (err) {
@@ -68,7 +69,9 @@ app.post("/api/auth/register", async (req, res) => {
       return res.status(400).json({ message: "Email already exists." });
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10);
+    // Hash Password
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
 
     const insertResult = await db.query(
       "INSERT INTO users (username, email, password) VALUES ($1, $2, $3) RETURNING id, username, email",

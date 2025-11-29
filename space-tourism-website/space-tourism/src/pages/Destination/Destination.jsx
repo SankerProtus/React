@@ -16,7 +16,7 @@ const Destination = () => {
         <div className="space-info">
           <NavigationLinks 
             selectedDestination={selectedDestination}
-            onDestinationChange={setSelectedDestination}
+            setSelectedDestination={setSelectedDestination}
           />
           <div>
             <h1 className="text-lg">{destination.name}</h1>

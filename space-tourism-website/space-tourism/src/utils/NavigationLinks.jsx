@@ -1,7 +1,7 @@
 import React from "react";
 import '../App.css';
 
-const NavigationLinks = ({ selectedDestination, onDestinationChange }) => {
+const NavigationLinks = ({ selectedDestination, setSelectedDestination }) => {
   const destinations = [
     { id: 'moon', name: 'Moon' },
     { id: 'mars', name: 'Mars' },
@@ -16,7 +16,7 @@ const NavigationLinks = ({ selectedDestination, onDestinationChange }) => {
           <li key={dest.id}>
             <button
               className={`nav-link ${selectedDestination === dest.id ? 'active' : ''}`}
-              onClick={() => onDestinationChange(dest.id)}
+              onClick={() => setSelectedDestination(dest.id)}
             >
               {dest.name}
             </button>
